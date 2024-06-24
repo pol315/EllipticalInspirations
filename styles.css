@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+#controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#card-count {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #e0e0e0;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+#generate-cards {
+    background-color: #1e88e5;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#generate-cards:hover {
+    background-color: #1565c0;
+}
+
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card {
+    position: relative; /* Make the card a positioned element */
+    border: 1px solid #555;
+    width: 300px;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    cursor: grab; /* Indicate draggable elements */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+.card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    /* Remove the darkening background */
+    border-radius: 8px;
+    pointer-events: none; /* Ensure the text does not interfere with dragging */
+}
+
+.overlay-text {
+    font-size: 1.2em;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.overlay-info {
+    margin-top: 5px;
+    font-size: 1em;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+    border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+}
+
+a {
+    color: white;
+}
