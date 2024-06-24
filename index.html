@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Include Sortable.js -->
     <script src="Sortable.js"></script>
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
-	<img src="logo.png"/>
+	<img id="logo" src="logo.png" alt="Logo"/>
     <div id="controls">
         <input type="number" id="card-count" placeholder="Number of cards" min="1">
         <button id="generate-cards">Generate Cards</button>
@@ -18,5 +19,17 @@
     <br/>
     <a href="EllipticalInspirations.zip">Download me for offline use!</a>
     <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
